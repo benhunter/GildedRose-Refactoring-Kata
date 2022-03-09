@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/b2186555/projects/GildedRose-Refactoring-Kata/Java/src</OriginalElement>
+  <nodes>
+    <node x="667.0351562500001" y="609.0">com.gildedrose.GildedRoseTest</node>
+    <node x="0.0" y="401.0">com.gildedrose.GildedRose</node>
+    <node x="749.2180989583337" y="237.0">com.gildedrose.NormalItem</node>
+    <node x="233.41666666666663" y="45.0">com.gildedrose.UpdatableItem</node>
+    <node x="1792.7643229166667" y="620.0">com.gildedrose.TexttestFixture</node>
+    <node x="213.2180989583336" y="237.0">com.gildedrose.ConjuredItem</node>
+    <node x="987.2180989583337" y="237.0">com.gildedrose.AgedBrieItem</node>
+    <node x="1481.2180989583337" y="248.0">com.gildedrose.ItemTest</node>
+    <node x="462.21809895833366" y="237.0">com.gildedrose.BackstagePassItem</node>
+    <node x="40.41666666666663" y="0.0">com.gildedrose.Item</node>
+    <node x="1237.2180989583337" y="237.0">com.gildedrose.SulfurasItem</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.gildedrose.GildedRose" target="com.gildedrose.UpdatableItem" relationship="TO_ONE">
+      <point x="-83.66666666666669" y="-73.0" />
+      <point x="41.83333333333337" y="379.0" />
+      <point x="78.16666666666663" y="379.0" />
+      <point x="78.16666666666663" y="369.0" />
+      <point x="97.32747395833348" y="369.0" />
+      <point x="97.32747395833348" y="196.0" />
+      <point x="261.25" y="196.0" />
+      <point x="-55.66666666666663" y="27.5" />
+    </edge>
+    <edge source="com.gildedrose.NormalItem" target="com.gildedrose.UpdatableItem" relationship="REALIZATION">
+      <point x="-54.5" y="-50.0" />
+      <point x="803.7180989583337" y="216.0" />
+      <point x="853.6399739583335" y="216.0" />
+      <point x="853.6399739583335" y="166.0" />
+      <point x="372.58333333333326" y="166.0" />
+      <point x="55.66666666666663" y="27.5" />
+    </edge>
+    <edge source="com.gildedrose.BackstagePassItem" target="com.gildedrose.UpdatableItem" relationship="REALIZATION">
+      <point x="-66.75" y="-50.0" />
+      <point x="528.9680989583337" y="216.0" />
+      <point x="853.6399739583335" y="216.0" />
+      <point x="853.6399739583335" y="166.0" />
+      <point x="372.58333333333326" y="166.0" />
+      <point x="55.66666666666663" y="27.5" />
+    </edge>
+    <edge source="com.gildedrose.GildedRose" target="com.gildedrose.NormalItem" relationship="CREATE">
+      <point x="83.66666666666669" y="-73.0" />
+      <point x="209.16666666666663" y="379.0" />
+      <point x="825.592447916667" y="379.0" />
+      <point x="825.592447916667" y="369.0" />
+      <point x="858.2180989583337" y="369.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="com.gildedrose.AgedBrieItem" target="com.gildedrose.UpdatableItem" relationship="REALIZATION">
+      <point x="-57.5" y="-50.0" />
+      <point x="1044.7180989583337" y="216.0" />
+      <point x="853.6399739583335" y="216.0" />
+      <point x="853.6399739583335" y="166.0" />
+      <point x="372.58333333333326" y="166.0" />
+      <point x="55.66666666666663" y="27.5" />
+    </edge>
+    <edge source="com.gildedrose.GildedRose" target="com.gildedrose.Item" relationship="DEPENDENCY">
+      <point x="-1.4210854715202004E-14" y="-73.0" />
+      <point x="125.5" y="379.0" />
+      <point x="89.16666666666663" y="379.0" />
+      <point x="89.16666666666663" y="359.0" />
+      <point x="53.70182291666674" y="359.0" />
+      <point x="53.70182291666674" y="186.0" />
+      <point x="105.29166666666663" y="186.0" />
+      <point x="-21.625" y="72.5" />
+    </edge>
+    <edge source="com.gildedrose.SulfurasItem" target="com.gildedrose.Item" relationship="GENERALIZATION">
+      <point x="56.0" y="-50.0" />
+      <point x="1405.2180989583337" y="206.0" />
+      <point x="863.6399739583335" y="206.0" />
+      <point x="863.6399739583335" y="186.0" />
+      <point x="148.54166666666663" y="186.0" />
+      <point x="21.625" y="72.5" />
+    </edge>
+    <edge source="com.gildedrose.GildedRoseTest" target="com.gildedrose.Item" relationship="CREATE">
+      <point x="0.0" y="-50.0" />
+      <point x="876.0351562500001" y="588.0" />
+      <point x="1752.7180989583337" y="588.0" />
+      <point x="1752.7180989583337" y="216.0" />
+      <point x="1774.0833333333335" y="216.0" />
+      <point x="1774.0833333333335" y="176.0" />
+      <point x="191.79166666666663" y="176.0" />
+      <point x="64.875" y="72.5" />
+    </edge>
+    <edge source="com.gildedrose.ItemTest" target="com.gildedrose.Item" relationship="CREATE">
+      <point x="0.0" y="-39.0" />
+      <point x="1611.7180989583337" y="216.0" />
+      <point x="1774.0833333333335" y="216.0" />
+      <point x="1774.0833333333335" y="176.0" />
+      <point x="191.79166666666663" y="176.0" />
+      <point x="64.875" y="72.5" />
+    </edge>
+    <edge source="com.gildedrose.ConjuredItem" target="com.gildedrose.UpdatableItem" relationship="REALIZATION">
+      <point x="-57.25" y="-50.0" />
+      <point x="270.4680989583336" y="216.0" />
+      <point x="853.6399739583335" y="216.0" />
+      <point x="853.6399739583335" y="166.0" />
+      <point x="372.58333333333326" y="166.0" />
+      <point x="55.66666666666663" y="27.5" />
+    </edge>
+    <edge source="com.gildedrose.GildedRose" target="com.gildedrose.UpdatableItem" relationship="DEPENDENCY">
+      <point x="-1.4210854715202004E-14" y="-73.0" />
+      <point x="125.5" y="379.0" />
+      <point x="89.16666666666663" y="379.0" />
+      <point x="89.16666666666663" y="359.0" />
+      <point x="202.7180989583336" y="359.0" />
+      <point x="202.7180989583336" y="206.0" />
+      <point x="316.91666666666663" y="206.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="com.gildedrose.TexttestFixture" target="com.gildedrose.GildedRose" relationship="CREATE">
+      <point x="0.0" y="-39.0" />
+      <point x="1877.2643229166667" y="568.0" />
+      <point x="125.5" y="568.0" />
+      <point x="0.0" y="73.0" />
+    </edge>
+    <edge source="com.gildedrose.GildedRoseTest" target="com.gildedrose.GildedRose" relationship="CREATE">
+      <point x="0.0" y="-50.0" />
+      <point x="876.0351562500001" y="578.0" />
+      <point x="125.5" y="578.0" />
+      <point x="0.0" y="73.0" />
+    </edge>
+    <edge source="com.gildedrose.GildedRose" target="com.gildedrose.Item" relationship="TO_ONE">
+      <point x="-83.66666666666669" y="-73.0" />
+      <point x="41.83333333333337" y="379.0" />
+      <point x="78.16666666666663" y="379.0" />
+      <point x="78.16666666666663" y="369.0" />
+      <point x="42.70182291666674" y="369.0" />
+      <point x="42.70182291666674" y="176.0" />
+      <point x="62.04166666666663" y="176.0" />
+      <point x="-64.875" y="72.5" />
+    </edge>
+    <edge source="com.gildedrose.AgedBrieItem" target="com.gildedrose.Item" relationship="GENERALIZATION">
+      <point x="57.5" y="-50.0" />
+      <point x="1159.7180989583337" y="206.0" />
+      <point x="863.6399739583335" y="206.0" />
+      <point x="863.6399739583335" y="186.0" />
+      <point x="148.54166666666663" y="186.0" />
+      <point x="21.625" y="72.5" />
+    </edge>
+    <edge source="com.gildedrose.ConjuredItem" target="com.gildedrose.Item" relationship="GENERALIZATION">
+      <point x="57.25" y="-50.0" />
+      <point x="384.9680989583336" y="206.0" />
+      <point x="863.6399739583335" y="206.0" />
+      <point x="863.6399739583335" y="186.0" />
+      <point x="148.54166666666663" y="186.0" />
+      <point x="21.625" y="72.5" />
+    </edge>
+    <edge source="com.gildedrose.SulfurasItem" target="com.gildedrose.UpdatableItem" relationship="REALIZATION">
+      <point x="-56.0" y="-50.0" />
+      <point x="1293.2180989583337" y="216.0" />
+      <point x="853.6399739583335" y="216.0" />
+      <point x="853.6399739583335" y="166.0" />
+      <point x="372.58333333333326" y="166.0" />
+      <point x="55.66666666666663" y="27.5" />
+    </edge>
+    <edge source="com.gildedrose.BackstagePassItem" target="com.gildedrose.Item" relationship="GENERALIZATION">
+      <point x="66.75" y="-50.0" />
+      <point x="662.4680989583337" y="206.0" />
+      <point x="863.6399739583335" y="206.0" />
+      <point x="863.6399739583335" y="186.0" />
+      <point x="148.54166666666663" y="186.0" />
+      <point x="21.625" y="72.5" />
+    </edge>
+    <edge source="com.gildedrose.GildedRose" target="com.gildedrose.SulfurasItem" relationship="CREATE">
+      <point x="83.66666666666669" y="-73.0" />
+      <point x="209.16666666666663" y="379.0" />
+      <point x="825.592447916667" y="379.0" />
+      <point x="825.592447916667" y="369.0" />
+      <point x="1349.2180989583337" y="369.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="com.gildedrose.TexttestFixture" target="com.gildedrose.Item" relationship="CREATE">
+      <point x="0.0" y="-39.0" />
+      <point x="1877.2643229166667" y="216.0" />
+      <point x="1774.0833333333335" y="216.0" />
+      <point x="1774.0833333333335" y="176.0" />
+      <point x="191.79166666666663" y="176.0" />
+      <point x="64.875" y="72.5" />
+    </edge>
+    <edge source="com.gildedrose.GildedRose" target="com.gildedrose.AgedBrieItem" relationship="CREATE">
+      <point x="83.66666666666669" y="-73.0" />
+      <point x="209.16666666666663" y="379.0" />
+      <point x="825.592447916667" y="379.0" />
+      <point x="825.592447916667" y="369.0" />
+      <point x="1102.2180989583337" y="369.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="com.gildedrose.GildedRose" target="com.gildedrose.ConjuredItem" relationship="CREATE">
+      <point x="83.66666666666669" y="-73.0" />
+      <point x="209.16666666666663" y="379.0" />
+      <point x="825.592447916667" y="379.0" />
+      <point x="825.592447916667" y="369.0" />
+      <point x="327.7180989583336" y="369.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="com.gildedrose.GildedRose" target="com.gildedrose.BackstagePassItem" relationship="CREATE">
+      <point x="83.66666666666669" y="-73.0" />
+      <point x="209.16666666666663" y="379.0" />
+      <point x="825.592447916667" y="379.0" />
+      <point x="825.592447916667" y="369.0" />
+      <point x="595.7180989583337" y="369.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="com.gildedrose.NormalItem" target="com.gildedrose.Item" relationship="GENERALIZATION">
+      <point x="54.5" y="-50.0" />
+      <point x="912.7180989583337" y="206.0" />
+      <point x="863.6399739583335" y="206.0" />
+      <point x="863.6399739583335" y="186.0" />
+      <point x="148.54166666666663" y="186.0" />
+      <point x="21.625" y="72.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="743.0" y="276.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

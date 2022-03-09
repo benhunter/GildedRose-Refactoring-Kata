@@ -54,7 +54,13 @@ class GildedRoseTest {
             Arguments.of("Backstage passes to a TAFKAL80ETC concert", 0, 6, -1, 0),
 
             // quality can't go above 50
+            Arguments.of("Backstage passes to a TAFKAL80ETC concert", 11, 49, 10, 50),
+            Arguments.of("Backstage passes to a TAFKAL80ETC concert", 10, 49, 9, 50),
+            Arguments.of("Backstage passes to a TAFKAL80ETC concert", 6, 49, 5, 50),
+            Arguments.of("Backstage passes to a TAFKAL80ETC concert", 5, 49, 4, 50),
+            Arguments.of("Backstage passes to a TAFKAL80ETC concert", 1, 49, 0, 50),
             Arguments.of("Backstage passes to a TAFKAL80ETC concert", 1, 50, 0, 50),
+            Arguments.of("Backstage passes to a TAFKAL80ETC concert", 0, 49, -1, 0),
             Arguments.of("Backstage passes to a TAFKAL80ETC concert", 0, 50, -1, 0),
 
             // Conjured Mana Cake
@@ -71,12 +77,12 @@ class GildedRoseTest {
 
     @ParameterizedTest
     @MethodSource("provideParametersForUpdateQuality")
-    void updateQuality_AgedBrie(String name, int startSellIn, int startQuality, int expectedSellIn, int expectedQuality) {
+    void updateQuality_parameterized(String name, int startSellIn, int startQuality, int expectedSellIn, int expectedQuality) {
         Item[] itemList = new Item[]{new Item(name, startSellIn, startQuality)};
         GildedRose app = new GildedRose(itemList);
         app.updateQuality();
-        assertEquals(expectedSellIn, app.items[0].sellIn);
-        assertEquals(expectedQuality, app.items[0].quality);
+        assertEquals(expectedSellIn, app.getItems()[0].sellIn);
+        assertEquals(expectedQuality, app.getItems()[0].quality);
     }
 
 }

@@ -1,97 +1,45 @@
 package com.gildedrose;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 class GildedRose {
-    Item[] items;
+    private final Item[] items;
+    private final UpdatableItem[] updatableItems;
 
     public GildedRose(Item[] items) {
-        this.items = items;
+        List<Item> itemsList = Arrays
+            .stream(items)
+            .map(item -> itemFactory(item))
+            .collect(Collectors.toList());
+
+        this.items = itemsList.toArray(Item[]::new);
+        this.updatableItems = itemsList.toArray(UpdatableItem[]::new);
+    }
+
+    public Item[] getItems() {
+        return items;
+    }
+
+    private Item itemFactory(Item item) {
+        if (item.name.startsWith("Conjured")) {
+            item = new ConjuredItem(item);
+        } else if (item.name.equals("Aged Brie")) {
+            item = new AgedBrieItem(item);
+        } else if (item.name.startsWith("Backstage passes")) {
+            item = new BackstagePassItem(item);
+        } else if (item.name.startsWith("Sulfuras")) {
+            item = new SulfurasItem(item);
+        } else {
+            item = new NormalItem(item);
+        }
+        return item;
     }
 
     public void updateQuality() {
-        for (Item item : items) {
-            if (item.name.startsWith("Conjured")) {
-                updateQualityForConjuredItem(item);
-            } else if (item.name.equals("Aged Brie")) {
-                updateQualityForAgedBrie(item);
-            } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                updateQualityForBackstagePasses(item);
-            } else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                updateQualityForSulfuras(item);
-            } else {
-                updateQualityForNormalItem(item);
-            }
+        for (UpdatableItem item : updatableItems) {
+            item.update();
         }
-    }
-
-    private void updateQualityForNormalItem(Item item) {
-        if (item.quality > 0) {
-            item.quality -= 1;
-            if (item.sellIn <= 0) {
-                item.quality -= 1;
-            }
-        }
-        item.sellIn -= 1;
-    }
-
-    private void updateQualityForSulfuras(Item item) {
-        return;
-    }
-
-    private void updateQualityForBackstagePasses(Item item) {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-
-            if (item.sellIn < 11) {
-                if (item.quality < 50) {
-                    item.quality += 1;
-                }
-            }
-
-            if (item.sellIn < 6) {
-                if (item.quality < 50) {
-                    item.quality += 1;
-                }
-            }
-        }
-
-        if (item.sellIn <= 0) {
-            if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                item.quality = 0;
-            }
-        }
-
-        item.sellIn -= 1;
-    }
-
-    private void updateQualityForAgedBrie(Item item) {
-        if (item.quality < 50) {
-            item.quality += 1;
-        }
-
-        if (item.sellIn <= 0) {
-            if (item.quality < 50) {
-                item.quality += 1;
-            }
-        }
-
-        item.sellIn -= 1;
-    }
-
-    private void updateQualityForConjuredItem(Item item) {
-        assert item.name.startsWith("Conjured");
-
-        if (item.quality > 0) {
-            if (item.sellIn > 0) {
-                item.quality -= 2;
-            } else {
-                item.quality -= 4;
-            }
-        }
-
-        if (item.quality < 0) {
-            item.quality = 0;
-        }
-
-        item.sellIn -= 1;
     }
 }
