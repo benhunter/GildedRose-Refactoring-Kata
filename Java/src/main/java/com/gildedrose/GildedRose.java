@@ -8,57 +8,33 @@ class GildedRose {
     }
 
     public void updateQuality() {
-
         for (Item item : items) {
-
             if (item.name.startsWith("Conjured")) {
                 updateQualityForConjuredItem(item);
-                continue;
-            }
-
-            if (item.name.equals("Aged Brie")) {
+            } else if (item.name.equals("Aged Brie")) {
                 updateQualityForAgedBrie(item);
-
             } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 updateQualityForBackstagePasses(item);
-
             } else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
-
+                updateQualityForSulfuras(item);
             } else {
-                if (item.quality > 0) {
-                    item.quality -= 1;
-                }
+                updateQualityForNormalItem(item);
             }
-
-            // Sulfuras does not age.
-            if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
-
-            } else {
-                item.sellIn = item.sellIn - 1;
-            }
-
-            if (item.sellIn < 0) {
-                if (!item.name.equals("Aged Brie")) {
-                    if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (item.quality > 0) {
-                            if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                                item.quality -= 1;
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (item.sellIn < 0) {
-                if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                    item.quality = 0;
-                }
-            }
-
-
-
         }
+    }
 
+    private void updateQualityForNormalItem(Item item) {
+        if (item.quality > 0) {
+            item.quality -= 1;
+            if (item.sellIn <= 0) {
+                item.quality -= 1;
+            }
+        }
+        item.sellIn -= 1;
+    }
+
+    private void updateQualityForSulfuras(Item item) {
+        return;
     }
 
     private void updateQualityForBackstagePasses(Item item) {
@@ -77,6 +53,14 @@ class GildedRose {
                 }
             }
         }
+
+        if (item.sellIn <= 0) {
+            if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                item.quality = 0;
+            }
+        }
+
+        item.sellIn -= 1;
     }
 
     private void updateQualityForAgedBrie(Item item) {
@@ -85,13 +69,12 @@ class GildedRose {
         }
 
         if (item.sellIn <= 0) {
-            if (item.name.equals("Aged Brie")) {
-                // Aged Brie. Increment a second time if sellIn < 0
-                if (item.quality < 50) {
-                    item.quality += 1;
-                }
+            if (item.quality < 50) {
+                item.quality += 1;
             }
         }
+
+        item.sellIn -= 1;
     }
 
     private void updateQualityForConjuredItem(Item item) {
