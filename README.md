@@ -1,6 +1,6 @@
 # Ben's Refactors
 
-- Java, branch: refactor-java
+- [Java on branch: refactor-java](https://github.com/benhunter/GildedRose-Refactoring-Kata/tree/update-readme)
 
 # Gilded Rose Refactoring Kata
 
