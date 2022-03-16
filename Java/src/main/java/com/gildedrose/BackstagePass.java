@@ -1,12 +1,12 @@
 package com.gildedrose;
 
-public class BackstagePassItem extends Item implements UpdatableItem {
-    public BackstagePassItem(String name, int sellIn, int quality) {
+public class BackstagePass extends UpdatableItem {
+    public BackstagePass(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
         assert this.name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
-    public BackstagePassItem(Item item) {
+    public BackstagePass(Item item) {
         super(item.name, item.sellIn, item.quality);
         assert this.name.equals("Backstage passes to a TAFKAL80ETC concert");
     }

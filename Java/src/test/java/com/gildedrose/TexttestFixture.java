@@ -15,7 +15,8 @@ public class TexttestFixture {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
                 new Item("Conjured Mana Cake", 3, 6) };
 
-        GildedRose app = new GildedRose(items);
+        UpdatableItemFactory factory = new UpdatableItemFactory();
+        GildedRose app = new GildedRose(items, factory);
 
         int days = 2;
         if (args.length > 0) {

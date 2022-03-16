@@ -1,12 +1,12 @@
 package com.gildedrose;
 
-public class NormalItem extends Item implements UpdatableItem {
-    public NormalItem(String name, int sellIn, int quality) {
+public class Normal extends UpdatableItem {
+    public Normal(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
         assert this.quality >= 0;
     }
 
-    public NormalItem(Item item) {
+    public Normal(Item item) {
         super(item.name, item.sellIn, item.quality);
         assert this.quality >= 0;
     }

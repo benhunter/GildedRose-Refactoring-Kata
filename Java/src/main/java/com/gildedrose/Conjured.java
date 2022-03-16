@@ -1,12 +1,12 @@
 package com.gildedrose;
 
-public class ConjuredItem extends Item implements UpdatableItem {
-    public ConjuredItem(Item item) {
+public class Conjured extends UpdatableItem {
+    public Conjured(Item item) {
         super(item.name, item.sellIn, item.quality);
         assert this.name.startsWith("Conjured");
     }
 
-    public ConjuredItem(String name, int sellIn, int quality) {
+    public Conjured(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
         assert this.name.startsWith("Conjured");
     }

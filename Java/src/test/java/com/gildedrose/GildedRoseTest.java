@@ -79,7 +79,8 @@ class GildedRoseTest {
     @MethodSource("provideParametersForUpdateQuality")
     void updateQuality_parameterized(String name, int startSellIn, int startQuality, int expectedSellIn, int expectedQuality) {
         Item[] itemList = new Item[]{new Item(name, startSellIn, startQuality)};
-        GildedRose app = new GildedRose(itemList);
+        UpdatableItemFactory factory = new UpdatableItemFactory();
+        GildedRose app = new GildedRose(itemList, factory);
         app.updateQuality();
         assertEquals(expectedSellIn, app.getItems()[0].sellIn);
         assertEquals(expectedQuality, app.getItems()[0].quality);
