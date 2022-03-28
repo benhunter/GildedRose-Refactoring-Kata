@@ -13,7 +13,7 @@ class GildedRose {
 
         List<UpdatableItem> itemsList = Arrays
             .stream(items)
-            .map(item -> this.factory.buildUpdatableItem(item))
+            .map(this.factory::buildUpdatableItem)
             .collect(Collectors.toList());
 
         this.updatableItems = itemsList.toArray(UpdatableItem[]::new);
